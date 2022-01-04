@@ -31,10 +31,10 @@ class Graph:
     self.moveNode(current, pendent_set, dependent_set)
     
     for neighbor in current.neighbors:
-      if neighbor in visited_set:
-        continue
-      elif neighbor in dependent_set:
+      if neighbor in dependent_set:
         return True
+      elif neighbor in visited_set:
+        continue
       elif self.depthFirstSearch(neighbor, pendent_set, dependent_set, visited_set):
         return True
     
